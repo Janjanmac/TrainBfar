@@ -344,79 +344,210 @@ function resetForm(){
 </script>
 
 <style scoped>
-.page-container{
-display:flex;
-font-family:Arial, Helvetica, sans-serif;
+.page-container {
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fa;
 }
 
 /* SIDEBAR */
-.sidebar { position:fixed; 
-  top:0; left:-250px; 
-  width:250px; 
-  height:100vh; 
-  background:white; 
-  padding:20px; 
-  transition:left .3s; 
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 230px;
+  height: 100vh;
+  background: white;
+  padding: 18px;
+  transition: left .3s;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.08);
 }
-.sidebar.open { left:0; }
-.sidebar-title { font-size:22px; margin-bottom:20px; }
-.sidebar ul { list-style:none; padding:0; }
-.sidebar li { margin:15px 0; }
-.sidebar a { text-decoration:none; font-size:20px; color:black; }
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-title {
+  font-size: 20px;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 12px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+}
 
 /* PAGE */
-.page { flex:1; padding:35px; transition:margin-left .3s; }
-.page.shifted { margin-left:250px; }
-
-.top-header { display:flex; 
-  align-items:center; 
-  background:#114a86; 
-  color:rgb(255, 255, 255); 
-  padding:17px;
- border-radius:12px; 
- position:relative; 
+.page {
+  flex: 1;
+  padding: 20px;
+  max-width: 1400px;
+  margin: auto;
+  transition: margin-left .3s;
 }
 
-.header-title { position:absolute; 
-  left:50%; 
-  transform:translateX(-50%); 
-  font-size:25px; 
-  font-weight:700;
- }
-
-.hamburger-btn { font-size:26px; 
-  background:#083c3f; 
-  color:white; 
-  border:none; 
-  padding:10px 15px; 
-  cursor:pointer; 
-  border-radius:6px; 
-}
-.form-toggle{ 
-  margin-top:20px; 
+.page.shifted {
+  margin-left: 230px;
 }
 
-.toggle-btn{
-  
-padding:14px 22px; font-size:20px; background:#114a86; color:white; border:none; border-radius:8px; cursor:pointer;
+/* HEADER */
+.top-header {
+  display: flex;
+  align-items: center;
+  background: #114a86;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 10px;
+  position: relative;
 }
 
-.card{ background:white; padding:28px; margin-top:25px; border-radius:14px; box-shadow:0 8px 15px rgba(0,0,0,.12); }
-.form{ display:grid; grid-template-columns:repeat(5,1fr); gap:18px; }
-.form input{ padding:12px 14px; font-size:20px; }
-.form-buttons{ grid-column:span 5; }
-.form button{ padding:16px; font-size:20px; background:#114a86; color:white; border:none; border-radius:6px; }
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: 700;
+}
 
-.province-title{ margin-top:35px; background:#083c3f; color:white; padding:12px; font-size:40px; border-radius:8px; }
-.municipality-title{ margin-bottom:18px; font-size:30px; }
+.hamburger-btn {
+  font-size: 22px;
+  background: #083c3f;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+}
 
-.record-card table{ width:100%; border-collapse:collapse; font-size:25px; }
-.record-card th{ background:#cfd8dc; padding:12px; }
-.record-card td{ padding:10px; border-bottom:1px solid #ddd; }
+/* ADD BUTTON */
+.form-toggle {
+  margin-top: 18px;
+}
 
-.record-card button{ padding:8px 12px; font-size:20px; margin-right:6px; border:none; border-radius:4px; cursor:pointer; }
-.record-card button:first-child{ background:#0b68a5; color:white; }
-.record-card button:last-child{ background:#f44336; color:white; }
+.toggle-btn {
+  padding: 10px 18px;
+  font-size: 14px;
+  background: #114a86;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-.empty{ padding:15px; background:#fff3cd; border-radius:8px; margin-top:10px; }
+/* FORM CARD */
+.card {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.form input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-buttons {
+  grid-column: span 5;
+}
+
+.form button {
+  padding: 10px 16px;
+  font-size: 14px;
+  background: #114a86;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+/* PROVINCE TITLE */
+.province-title {
+  margin-top: 25px;
+  background: #083c3f;
+  color: white;
+  padding: 10px 18px;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* MUNICIPALITY */
+.municipality-title {
+  margin-bottom: 14px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* RECORD CARD */
+.record-card {
+  background: white;
+  padding: 18px;
+  margin-top: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+}
+
+.record-card table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.record-card th {
+  background: #cfd8dc;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.record-card td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.record-card button {
+  padding: 6px 10px;
+  font-size: 13px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.record-card button:first-child {
+  background: #0b68a5;
+  color: white;
+}
+
+.record-card button:last-child {
+  background: #f44336;
+  color: white;
+}
+
+.empty {
+  padding: 12px;
+  background: #fff3cd;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 14px;
+}
 </style>
