@@ -132,7 +132,7 @@ onMounted(() => {
 
 table{
   border-collapse:collapse;
-  min-width:2000px;
+  min-width:1500px;
   width:100%;
 }
 
