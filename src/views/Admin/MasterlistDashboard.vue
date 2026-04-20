@@ -209,145 +209,155 @@ watch(() => form.value.middleName, (val) => {
 </script>
 
 <style scoped>
-.dashboard{
-  padding:25px;
-  background:#f4f6fa;
-  min-height:100vh;
-  font-family:Arial, sans-serif;
+.dashboard {
+  padding: 18px;
+  background: #f4f6fa;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  max-width: 1400px;
+  margin: auto;
 }
 
-.top-header{ 
-  display:flex; 
-  align-items:center; 
-  background:#114a86; 
-  color:white; 
-  padding:22px; 
-  border-radius:12px; 
-  position:relative; 
+/* HEADER */
+.top-header {
+  display: flex;
+  align-items: center;
+  background: #114a86;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 10px;
+  position: relative;
 }
 
-.header-title{ 
-  position:absolute; 
-  left:50%; 
-  transform:translateX(-50%); 
-  font-size:48px; 
-  font-weight:700; 
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: 700;
 }
 
-.back-btn{ 
-  background:#0b68a5; 
-  color:white; 
-  border:none; 
-  padding:10px 18px; 
-  border-radius:6px; 
-  font-size:20px; 
-  cursor:pointer; 
-  margin-left:10px; 
+.back-btn {
+  background: #0b68a5;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 8px;
 }
 
 /* FORM */
-.card.form{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:12px;
-  padding:15px;
-  margin:15px 0;
-  background:white;
-  border-radius:10px;
-  box-shadow:0 8px 15px rgba(0,0,0,.12);
+.card.form {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  padding: 14px;
+  margin: 15px 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
 }
 
-.card.form input{
-  padding:8px;
-  font-size:14px;
+.card.form input {
+  padding: 8px 10px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 /* CHECKBOXES */
-.form-checkboxes{
-  grid-column:span 6;
-  display:flex;
-  gap:12px;
+.form-checkboxes {
+  grid-column: span 6;
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
 }
 
 /* FORM BUTTON */
-.form-buttons{
-  grid-column:span 6;
-  text-align:right;
+.form-buttons {
+  grid-column: span 6;
+  text-align: right;
 }
 
-.form-buttons button{
-  background:#114a86;
-  color:white;
-  padding:8px 16px;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
+.form-buttons button {
+  background: #114a86;
+  color: white;
+  padding: 8px 14px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 /* TABLE */
-.table-wrapper{
-  overflow:auto;
-  background:white;
-  border-radius:12px;
-  box-shadow:0 8px 15px rgba(0,0,0,.12);
+.table-wrapper {
+  overflow-x: auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+  margin-top: 15px;
 }
 
-table{
-  border-collapse:collapse;
-  min-width:2200px;
-  width:100%;
+table {
+  border-collapse: collapse;
+  min-width: 1600px;
+  width: 100%;
 }
 
-th{
-  background:#e0e0e0;
-  padding:12px;
-  font-size:18px;
-  border:1px solid #cfcfcf;
+th {
+  background: #e0e0e0;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #cfcfcf;
 }
 
 th.home-address,
-td.home-address{
-  min-width:300px;
+td.home-address {
+  min-width: 220px;
 }
 
-td{
-  padding:8px;
-  border:1px solid #e0e0e0;
-  font-size:14px;
+td {
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  font-size: 13px;
 }
 
-td input{
-  width:100%;
-  min-height:20px;
-  padding:4px 6px;
-  font-size:14px;
-  border:none;
-  outline:none;
-  background:transparent;
+td input {
+  width: 100%;
+  min-height: 18px;
+  padding: 4px 6px;
+  font-size: 13px;
+  border: none;
+  outline: none;
+  background: transparent;
 }
 
-.index{
-  font-weight:600;
-  text-align:center;
-  
+.index {
+  font-weight: 600;
+  text-align: center;
 }
 
-.edit{
-  background:#0b68a5;
-  color:white;
-  border:none;
-  padding:6px 10px;
-  border-radius:4px;
-  cursor:pointer;
-  margin-right:4px;
+/* BUTTONS */
+.edit {
+  background: #0b68a5;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 4px;
 }
 
-.delete{
-  background:#f44336;
-  color:white;
-  border:none;
-  padding:6px 10px;
-  border-radius:4px;
-  cursor:pointer;
+.delete {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 </style>
