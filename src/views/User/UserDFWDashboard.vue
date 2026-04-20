@@ -226,7 +226,7 @@ const groupedData = computed(() => {
 
 /* HEADER */
 .top-header { display:flex; align-items:center; background:#114a86; color:rgb(255, 255, 255); padding:22px; border-radius:12px; position:relative; }
-.header-title { position:absolute; left:50%; transform:translateX(-50%); font-size:30px; font-weight:700; }
+.header-title { position:absolute; left:50%; transform:translateX(-50%); font-size:25px; font-weight:700; }
 .hamburger-btn { font-size:26px; background:#083c3f; color:white; border:none; padding:10px 15px; cursor:pointer; border-radius:6px; }
 
 /* RECORD CARDS */
