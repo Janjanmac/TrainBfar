@@ -225,7 +225,7 @@ remember
 .login-container {
   width: 100%;
   max-width: 1200px;
-  min-height: 680px;
+  min-height: 640px;
   display: flex;
   border-radius: 18px;
   overflow: hidden;
