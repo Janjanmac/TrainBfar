@@ -88,7 +88,7 @@ onMounted(() => {
 .dashboard{
   padding:25px;
   background:#f4f6fa;
-  min-height:100vh;
+  min-height:90vh;
   font-family:Arial, sans-serif;
 }
 
@@ -106,7 +106,7 @@ onMounted(() => {
   position:absolute; 
   left:50%; 
   transform:translateX(-50%); 
-  font-size:48px; 
+  font-size:25px; 
   font-weight:700; 
 }
 
@@ -116,7 +116,7 @@ onMounted(() => {
   border:none; 
   padding:10px 18px; 
   border-radius:6px; 
-  font-size:20px; 
+  font-size:15px; 
   cursor:pointer; 
   margin-left:10px; 
 }
@@ -132,26 +132,26 @@ onMounted(() => {
 
 table{
   border-collapse:collapse;
-  min-width:2200px;
+  min-width:2000px;
   width:100%;
 }
 
 th{
   background:#e0e0e0;
   padding:12px;
-  font-size:18px;
+  font-size:13px;
   border:1px solid #cfcfcf;
 }
 
 th.home-address,
 td.home-address{
-  min-width:300px;
+  min-width:250px;
 }
 
 td{
   padding:8px;
   border:1px solid #e0e0e0;
-  font-size:14px;
+  font-size:10px;
 }
 
 td input{
