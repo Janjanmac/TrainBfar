@@ -210,269 +210,226 @@ remember
 </script>
 
 <style scoped>
-
 /* PAGE */
-
-.login-page{
-
-  height:98vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  background:linear-gradient(135deg,#7db0fc,#f4f7fb);
-
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #7db0fc, #f4f7fb);
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* CONTAINER */
-
-.login-container{
-
-  width:1400px; 
-  height:800px;
-
-  display:flex;
-
-  border-radius:18px;
-  overflow:hidden;
-
-  box-shadow:0 25px 50px rgba(0,0,0,0.2);
-
-  background:white;
-
+.login-container {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 680px;
+  display: flex;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  background: white;
 }
 
 /* LEFT PANEL */
-
-.login-left{
-
-  width:50%;
-  padding:50px;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-
+.login-left {
+  width: 50%;
+  padding: 50px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* HEADER LEFT */
+/* HEADER */
 .header-left {
-  text-align:center;
-  margin-top:0; /* top align */
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.header-left h1{
-  font-size:80px;
-  color:#0d5c63;
-  margin:0;
+.header-left h1 {
+  font-size: clamp(48px, 5vw, 72px);
+  color: #0d5c63;
+  margin: 0;
+  font-weight: 900;
 }
 
-.header-left p{
-  font-size:30px;
-  color:#777;
-  margin:0;
+.header-left p {
+  font-size: clamp(18px, 2vw, 26px);
+  color: #777;
+  margin: 5px 0;
 }
 
-.header-left h2{
-  margin:10px 0 10px 0;
-  font-size:60px;
+.header-left h2 {
+  margin: 15px 0 10px;
+  font-size: clamp(36px, 4vw, 52px);
 }
 
-/* Separate subheading under Welcome Back */
+/* SUBHEADING */
 .subheading {
-  margin-top:100px;   /* adds space from Welcome Back! */
+  margin-top: 20px;
 }
 
-.subheading .sub{
-  font-size:30px;
-  color:#777;
-  display:block;
+.subheading .sub {
+  font-size: clamp(16px, 2vw, 24px);
+  color: #777;
+}
+
+/* FORM */
+form {
+  width: 100%;
 }
 
 /* INPUT */
+.input-group {
+  width: 100%;
+}
 
-.input-group input{
-
-  width:100%;
-  padding:12px;
-  margin-bottom:15px;
-
-  border-radius:8px;
-  border:1px solid #ddd;
-
-  font-size:19px;
-
+.input-group input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 17px;
+  box-sizing: border-box;
 }
 
 /* PASSWORD */
-
-.password-box{
-
-  position:relative;
-
+.password-box {
+  position: relative;
 }
 
-.toggle{
-
-  position:absolute;
-  right:10px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:17px;
-  cursor:pointer;
-  color:#555;
-
+.toggle {
+  position: absolute;
+  right: 15px;
+  top: 38%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  cursor: pointer;
+  color: #555;
 }
 
 /* OPTIONS */
-
-.options{
-
-  display:flex;
-  justify-content:space-between;
-  font-size:19px;
-  margin-bottom:20px;
-
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
-.options a{
-
-  text-decoration:none;
-  color:#ff5252;
-
+.options a {
+  text-decoration: none;
+  color: #ff5252;
 }
 
-/* BUTTON */
-
-.login-btn{
-
-  width:100%;
-  padding:12px;
-
-  background:#0d5c63;
-  color:white;
-
-  border:none;
-  border-radius:8px;
-
-  font-weight:bold;
-  margin-bottom:10px;
-
-  cursor:pointer;
-  transition:.3s;
-  font-size:20px;
-
+/* LOGIN BUTTON */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #0d5c63;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
 }
 
-.login-btn:hover{
-
-  background:#0b4a50;
-
+.login-btn:hover {
+  background: #0b4a50;
 }
 
-/* CREATE */
-
-.create-btn{
-
-  display:block;
-  text-align:center;
-
-  padding:12px;
-
-  border-radius:8px;
-  border:1px solid #0d5c63;
-
-  text-decoration:none;
-  color:#0d5c63;
-
-  font-weight:bold;
-  font-size:24px;
-
+/* CREATE ACCOUNT */
+.create-btn {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #0d5c63;
+  text-decoration: none;
+  color: #0d5c63;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 /* RIGHT PANEL */
-
-.login-right{
-
-  width:50%;
-  position:relative;
-  overflow:hidden;
-
+.login-right {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
 }
 
 /* IMAGE */
-
-.login-right img{
-
-  width:100%;
-  height:100%;
-  object-fit:cover;
-
-  animation:zoom 20s infinite alternate;
-
+.login-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* IMAGE OVERLAY */
-
-.image-overlay{
-
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.3);
-
-  z-index:1;
-
+/* OVERLAY */
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
 }
 
 /* SYSTEM TEXT */
-
-.system-info{
-
-  position:absolute;
-  bottom:40px;
-  left:40px;
-
-  color:white;
-  z-index:2;
-
+.system-info {
+  position: absolute;
+  bottom: 35px;
+  left: 35px;
+  color: white;
+  z-index: 2;
 }
 
-.system-info h2{
-
-  margin:0;
-  font-size:35px;
-
+.system-info h2 {
+  margin: 0;
+  font-size: 30px;
 }
 
-.system-info p{
-
-  margin:0;
-  font-size:20px;
-
+.system-info p {
+  margin: 5px 0 0;
+  font-size: 18px;
 }
 
 /* ERROR */
-
-.error{
-
-  color:red;
-  margin-top:10px;
-  font-size:13px;
-
+.error {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
-/* ANIMATION */
-
-@keyframes zoom{
-
-  from{
-    transform:scale(1);
+/* LAPTOP SMALL */
+@media (max-width: 1024px) {
+  .login-container {
+    max-width: 950px;
+    min-height: 600px;
   }
 
-  to{
-    transform:scale(1.1);
+  .login-left {
+    padding: 35px;
   }
-
 }
 
+/* TABLET / MOBILE */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-left,
+  .login-right {
+    width: 100%;
+  }
+
+  .login-right {
+    min-height: 280px;
+  }
+}
 </style>
