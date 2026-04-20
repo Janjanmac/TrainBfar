@@ -116,93 +116,128 @@ async function removeForever(row){
 
 
 <style scoped>
-.page{
-  padding:35px;
+.page {
+  padding: 20px;
+  max-width: 1400px;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6fa;
+}
+
+.page * {
   font-family: Arial, Helvetica, sans-serif;
 }
-.page *{
-  font-family: Arial, Helvetica, sans-serif;
+
+/* HEADER */
+.top-header {
+  display: flex;
+  align-items: center;
+  background: #114a86;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 10px;
+  position: relative;
 }
-.top-header{
-  display:flex;
-  align-items:center;
-  background:#114a86;
-  color:white;
-  padding:22px;
-  border-radius:12px;
-  position:relative;
+
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
 }
-.header-title{
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  font-size:55px;
-  font-weight:700;
-  margin:0;
+
+.back-btn {
+  font-size: 14px;
+  background: #083c3f;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
 }
-.back-btn{
-  font-size:20px;
-  background:#083c3f;
-  color:white;
-  border:none;
-  padding:10px 18px;
-  border-radius:6px;
-  cursor:pointer;
+
+/* CARD */
+.card {
+  background: white;
+  padding: 20px;
+  margin-top: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
 }
-.card{
-  background:white;
-  padding:28px;
-  margin-top:25px;
-  border-radius:14px;
-  box-shadow:0 8px 15px rgba(0,0,0,.12);
+
+/* PROVINCE TITLE */
+.province-title {
+  margin-top: 20px;
+  background: #083c3f;
+  color: white;
+  padding: 10px 16px;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 8px;
 }
-.province-title{
-  margin-top:35px;
-  background:#083c3f;
-  color:white;
-  padding:12px;
-  font-size:40px;
-  border-radius:8px;
+
+/* MUNICIPALITY */
+.municipality-title {
+  margin-bottom: 14px;
+  font-size: 22px;
+  font-weight: 600;
 }
-.municipality-title{
-  margin-bottom:18px;
-  font-size:30px;
-  font-weight:600;
+
+/* TABLE */
+.record-card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+  overflow-x: auto;
 }
-.record-card table{
-  width:100%;
-  border-collapse:collapse;
-  font-size:25px;
+
+.record-card table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
 }
-.record-card th{
-  background:#cfd8dc;
-  padding:12px;
-  text-align:left;
+
+.record-card th {
+  background: #cfd8dc;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
 }
-.record-card td{
-  padding:10px;
-  border-bottom:1px solid #ddd;
+
+.record-card td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 13px;
 }
-.record-card table button{
-  padding:8px 12px;
-  font-size:20px;
-  margin-right:6px;
-  border:none;
-  border-radius:4px;
-  cursor:pointer;
+
+/* BUTTONS */
+.record-card table button {
+  padding: 6px 10px;
+  font-size: 12px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
-.record-card table button:first-child{
-  background:#0b68a5;
-  color:white;
+
+.record-card table button:first-child {
+  background: #0b68a5;
+  color: white;
 }
-.record-card table button:last-child{
-  background:#f44336;
-  color:white;
+
+.record-card table button:last-child {
+  background: #f44336;
+  color: white;
 }
-.empty{
-  padding:15px;
-  background:#fff3cd;
-  border-radius:8px;
-  margin-top:10px;
+
+.empty {
+  padding: 12px;
+  background: #fff3cd;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 13px;
 }
 </style>
