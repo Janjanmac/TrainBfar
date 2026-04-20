@@ -203,15 +203,7 @@ municipality:this.selectedMunicipality
 .page {
   min-height: 100vh;
   background: linear-gradient(135deg, #d8e7ff, #eff6ff);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* WRAPPER para naka-center lahat */
-.page > * {
-  width: 100%;
-  max-width: 1200px;
+  padding-bottom: 30px;
 }
 
 /* HEADER */
@@ -219,14 +211,11 @@ municipality:this.selectedMunicipality
   width: 100%;
   text-align: center;
   background: linear-gradient(135deg, #5c9bfa, #f4f7fb);
-  display: flex;
-  justify-content: center;
 }
 
 .header-image {
   width: 100%;
-  max-width: 1200px;
-  max-height: 260px;
+  max-height: 290px;
   object-fit: contain;
 }
 
@@ -234,36 +223,37 @@ municipality:this.selectedMunicipality
 .title-section {
   text-align: center;
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 0 15px;
 }
 
 .title-section h1 {
-  font-size: 42px;
+  font-size: clamp(28px, 5vw, 50px);
   font-weight: 900;
   margin: 0;
 }
 
 .title-section p {
-  font-size: 22px;
+  font-size: clamp(18px, 3vw, 30px);
   color: #444;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
-/* DASHBOARD CENTER FIX */
+/* DASHBOARD */
 .dashboard {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 20px;
+  padding: 20px;
+  margin-top: 30px;
 }
 
-/* CARD IMPROVED */
+/* CARD */
 .card {
   width: 100%;
-  max-width: 450px;
+  max-width: 420px;
   background: white;
-  padding: 35px;
-  border-radius: 14px;
+  padding: 30px;
+  border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -272,17 +262,18 @@ label {
   display: block;
   margin-top: 12px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: clamp(16px, 2vw, 25px);
 }
 
 select {
   width: 100%;
   padding: 12px;
-  margin-top: 6px;
-  margin-bottom: 14px;
-  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: clamp(14px, 2vw, 19px);
   border-radius: 6px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 button {
@@ -291,7 +282,7 @@ button {
   border: none;
   background: #5ca5ff;
   color: white;
-  font-size: 18px;
+  font-size: clamp(16px, 2vw, 25px);
   border-radius: 6px;
   cursor: pointer;
   transition: 0.3s ease;
@@ -306,25 +297,10 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* LAPTOP FIX (important) */
-@media (min-width: 1024px) {
-  .card {
-    max-width: 480px;
-  }
-
-  .title-section h1 {
-    font-size: 48px;
-  }
-
-  .title-section p {
-    font-size: 24px;
-  }
-}
-
 /* TABLET */
 @media (max-width: 768px) {
   .header-image {
-    max-height: 200px;
+    max-height: 220px;
   }
 
   .card {
@@ -335,11 +311,26 @@ button:disabled {
 /* MOBILE */
 @media (max-width: 480px) {
   .header-image {
-    max-height: 150px;
+    max-height: 160px;
+  }
+
+  .title-section {
+    margin-top: 15px;
+  }
+
+  .dashboard {
+    padding: 15px;
+    margin-top: 20px;
   }
 
   .card {
     padding: 20px;
+    border-radius: 10px;
+  }
+
+  select,
+  button {
+    padding: 12px;
   }
 }
 </style>
