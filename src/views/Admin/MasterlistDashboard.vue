@@ -302,7 +302,7 @@ watch(() => form.value.middleName, (val) => {
 
 table {
   border-collapse: collapse;
-  min-width: 1600px;
+  min-width: 1200px;
   width: 100%;
 }
 
