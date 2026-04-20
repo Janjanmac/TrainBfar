@@ -225,7 +225,7 @@ const groupedData = computed(() => {
 .page.shifted { margin-left:250px; }
 
 /* HEADER */
-.top-header { display:flex; align-items:center; background:#114a86; color:rgb(255, 255, 255); padding:22px; border-radius:12px; position:relative; }
+.top-header { display:flex; align-items:center; background:#114a86; color:rgb(255, 255, 255); padding:17px; border-radius:12px; position:relative; }
 .header-title { position:absolute; left:50%; transform:translateX(-50%); font-size:25px; font-weight:700; }
 .hamburger-btn { font-size:26px; background:#083c3f; color:white; border:none; padding:10px 15px; cursor:pointer; border-radius:6px; }
 
@@ -235,7 +235,7 @@ const groupedData = computed(() => {
 .municipality-title { margin-bottom:18px; font-size:26px; }
 
 /* TABLE */
-.record-card table { width:100%; border-collapse:collapse; font-size:10px; }
+.record-card table { width:100%; border-collapse:collapse; font-size:14px; }
 .record-card th { background:#cfd8dc; padding:12px; }
 .record-card td { padding:10px; border-bottom:1px solid #ddd; }
 
