@@ -235,7 +235,7 @@ const groupedData = computed(() => {
 .municipality-title { margin-bottom:18px; font-size:26px; }
 
 /* TABLE */
-.record-card table { width:100%; border-collapse:collapse; font-size:20px; }
+.record-card table { width:100%; border-collapse:collapse; font-size:10px; }
 .record-card th { background:#cfd8dc; padding:12px; }
 .record-card td { padding:10px; border-bottom:1px solid #ddd; }
 
