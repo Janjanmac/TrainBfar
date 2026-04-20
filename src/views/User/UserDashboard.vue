@@ -3,13 +3,7 @@
 
     <!-- HEADER -->
     <div class="header">
-      <div class="header-content">
-        <img src="@/assets/bfar-header.png" class="header-image" />
-        <div class="user-info">
-          <span class="welcome-text">Welcome, {{ userEmail }}</span>
-          <button @click="logout" class="logout-btn">Logout</button>
-        </div>
-      </div>
+      <img src="@/assets/bfar-header.png" class="header-image" />
     </div>
 
     <!-- TITLE -->
@@ -68,90 +62,7 @@
 </template>
 
 <script>
-import { useRouter } from 'vue-router'
-import { onMounted, ref } from 'vue'
-
 export default {
-
-setup(){
-const router = useRouter()
-const userEmail = ref('')
-const sessionTimeout = ref(null)
-
-// Check session on component mount
-onMounted(() => {
-  checkSession()
-  startSessionTimeout()
-})
-
-const checkSession = () => {
-  const session = sessionStorage.getItem('user') || localStorage.getItem('user')
-  
-  if (!session) {
-    router.push('/login')
-    return
-  }
-  
-  try {
-    const userData = JSON.parse(session)
-    
-    // Check if user has correct role
-    if (userData.role !== 'user') {
-      router.push('/login')
-      return
-    }
-    
-    userEmail.value = userData.email || 'User'
-    
-  } catch (error) {
-    console.error('Invalid session data:', error)
-    logout()
-  }
-}
-
-const startSessionTimeout = () => {
-  // Auto logout after 30 minutes of inactivity
-  sessionTimeout.value = setTimeout(() => {
-    alert('Session expired due to inactivity. Please login again.')
-    logout()
-  }, 30 * 60 * 1000) // 30 minutes
-}
-
-const resetSessionTimeout = () => {
-  if (sessionTimeout.value) {
-    clearTimeout(sessionTimeout.value)
-    startSessionTimeout()
-  }
-}
-
-const logout = () => {
-  // Clear session storage
-  sessionStorage.removeItem('user')
-  localStorage.removeItem('user')
-  
-  // Clear timeout
-  if (sessionTimeout.value) {
-    clearTimeout(sessionTimeout.value)
-  }
-  
-  // Redirect to login
-  router.push('/login')
-}
-
-// Listen for user activity to reset timeout
-if (typeof window !== 'undefined') {
-  window.addEventListener('mousemove', resetSessionTimeout)
-  window.addEventListener('keypress', resetSessionTimeout)
-  window.addEventListener('click', resetSessionTimeout)
-  window.addEventListener('scroll', resetSessionTimeout)
-}
-
-return{
-  logout,
-  userEmail,
-  checkSession
-}
-},
 
 data(){
 return{
@@ -238,13 +149,6 @@ this.filteredMunicipalities=[]
 
 enterDashboard(){
 
-// Validate session before navigation
-const session = sessionStorage.getItem('user') || localStorage.getItem('user')
-if (!session) {
-  this.$router.push('/login')
-  return
-}
-
 if(!this.selectedYear || !this.selectedProvince || !this.selectedMunicipality){
 
 alert("Please select Year, Province and Municipality")
@@ -297,7 +201,7 @@ municipality:this.selectedMunicipality
 
 <style scoped>
 .page {
-  min-height: 80vh;
+  min-height: 90vh;
   background: linear-gradient(135deg, #d8e7ff, #eff6ff);
   padding-bottom: 30px;
 }
@@ -305,54 +209,14 @@ municipality:this.selectedMunicipality
 /* HEADER */
 .header {
   width: 100%;
+  text-align: center;
   background: linear-gradient(135deg, #5c9bfa, #f4f7fb);
-}
-
-.header-content {
-  position: relative;
-  width: 100%;
 }
 
 .header-image {
   width: 100%;
   max-height: 290px;
   object-fit: contain;
-  display: block;
-}
-
-.user-info {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.welcome-text {
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-}
-
-.logout-btn {
-  padding: 8px 16px;
-  background: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.logout-btn:hover {
-  background: #c82333;
 }
 
 /* TITLE */
@@ -448,23 +312,6 @@ button:disabled {
 @media (max-width: 480px) {
   .header-image {
     max-height: 160px;
-  }
-
-  .user-info {
-    position: static;
-    margin: 10px;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
-
-  .welcome-text {
-    text-align: center;
-    font-size: 14px;
-  }
-
-  .logout-btn {
-    width: 100%;
   }
 
   .title-section {
