@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Login from '../views/login.vue'
+import Login from '../views/Login.vue'
 import AdminDashboard from '../views/Admin/AdminDashboard.vue'
 import UserDashboard from '../views/User/UserDashboard.vue'
 import Register from '../views/Register.vue'
@@ -83,7 +83,7 @@ const router = createRouter({
 // ---------------------------
 router.beforeEach((to, from, next) => {
   // Mga public pages na puwedeng ma-access kahit walang login
-  const publicPages = ['login', 'register']
+  const publicPages = ['Login', 'Register']
   const authRequired = to.meta?.requiresAuth
 
   // Kuhanin ang session
@@ -91,7 +91,7 @@ router.beforeEach((to, from, next) => {
 
   // Kung route ay requiresAuth at walang session, redirect sa login
   if (authRequired && !loggedIn) {
-    return next({ name: 'login' })
+    return next({ name: 'Login' })
   }
 
   // Kung may session, check ang role
