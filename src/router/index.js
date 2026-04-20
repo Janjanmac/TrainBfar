@@ -83,7 +83,7 @@ const router = createRouter({
 // ---------------------------
 router.beforeEach((to, from, next) => {
   // Mga public pages na puwedeng ma-access kahit walang login
-  const publicPages = ['Login', 'Register']
+  const publicPages = ['login', 'register']
   const authRequired = to.meta?.requiresAuth
 
   // Kuhanin ang session
@@ -91,7 +91,7 @@ router.beforeEach((to, from, next) => {
 
   // Kung route ay requiresAuth at walang session, redirect sa login
   if (authRequired && !loggedIn) {
-    return next({ name: 'Login' })
+    return next({ name: 'login' })
   }
 
   // Kung may session, check ang role
