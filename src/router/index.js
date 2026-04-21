@@ -82,30 +82,37 @@ const router = createRouter({
 // SESSION & SECURED ROUTING
 // ---------------------------
 router.beforeEach((to, from, next) => {
-  // Mga public pages na puwedeng ma-access kahit walang login
+
   const publicPages = ['Login', 'Register']
   const authRequired = to.meta?.requiresAuth
 
-  // Kuhanin ang session
-  const loggedIn = sessionStorage.getItem('user') // example: {username, role}
+  const loggedIn = sessionStorage.getItem('user')
 
-  // Kung route ay requiresAuth at walang session, redirect sa login
+  // 🔒 1. Not logged in
   if (authRequired && !loggedIn) {
     return next({ name: 'Login' })
   }
 
-  // Kung may session, check ang role
+  // 🔒 2. Role checking
   if (loggedIn) {
     const userRole = JSON.parse(loggedIn).role
 
-    // Kung may role restriction sa route at hindi tugma, redirect sa sariling dashboard
     if (to.meta?.role && to.meta.role !== userRole) {
       if (userRole === 'admin') return next({ name: 'AdminDashboard' })
       if (userRole === 'user') return next({ name: 'UserDashboard' })
     }
   }
 
-  // Otherwise, proceed
+  // 🔥 3. BLOCK DIRECT URL ACCESS SA USER DFW PAGES
+  const hasAccess = localStorage.getItem('hasAccess')
+
+  if (
+    to.name?.startsWith("UserDFW") && 
+    !hasAccess
+  ) {
+    return next({ name: 'UserDashboard' }) // balik sa selection page
+  }
+
   next()
 })
   

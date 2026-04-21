@@ -150,11 +150,12 @@ this.filteredMunicipalities=[]
 enterDashboard(){
 
 if(!this.selectedYear || !this.selectedProvince || !this.selectedMunicipality){
-
-alert("Please select Year, Province and Municipality")
-return
-
+  alert("Please select Year, Province and Municipality")
+  return
 }
+
+// ✅ SET ACCESS FLAG (important for guard)
+localStorage.setItem("hasAccess", "true")
 
 let routeName=""
 
@@ -183,13 +184,14 @@ else if(this.selectedYear==="2030"){
 routeName="UserDFW2030"
 }
 
-this.$router.push({
-name:routeName,
-query:{
-year:this.selectedYear,
-province:this.selectedProvince,
-municipality:this.selectedMunicipality
-}
+// 🔥 IMPORTANT: replace instead of push
+this.$router.replace({
+  name: routeName,
+  query:{
+    year:this.selectedYear,
+    province:this.selectedProvince,
+    municipality:this.selectedMunicipality
+  }
 })
 
 }
